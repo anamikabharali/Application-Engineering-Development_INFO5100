@@ -15,7 +15,7 @@ public class DeleteJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DeleteJPanel
      */
-    public DeleteJPanel() {
+    public DeleteJPanel(EmpList history) {
         initComponents();
         this.history = history;
         boolean found = false;

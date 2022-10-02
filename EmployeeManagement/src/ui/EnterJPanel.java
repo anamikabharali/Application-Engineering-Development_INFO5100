@@ -58,6 +58,8 @@ public class EnterJPanel extends javax.swing.JPanel {
         txtemailid = new javax.swing.JTextField();
         btnenter = new javax.swing.JButton();
         txtgender = new javax.swing.JTextField();
+        photo = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         jRadioButton2.setText("Female");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -118,6 +120,8 @@ public class EnterJPanel extends javax.swing.JPanel {
             }
         });
 
+        jTextField1.setText("jTextField1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -138,23 +142,30 @@ public class EnterJPanel extends javax.swing.JPanel {
                     .addComponent(lbgender))
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel1)
-                        .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtname)
-                        .addComponent(txtempid)
-                        .addComponent(txtstartdate)
-                        .addComponent(txtlevel)
-                        .addComponent(txtdepartment)
-                        .addComponent(txtposition)
-                        .addComponent(txtphone, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                        .addComponent(txtemailid))
-                    .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 127, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel1)
+                                .addComponent(txtname)
+                                .addComponent(txtempid)
+                                .addComponent(txtstartdate)
+                                .addComponent(txtlevel)
+                                .addComponent(txtdepartment)
+                                .addComponent(txtposition)
+                                .addComponent(txtphone, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                                .addComponent(txtemailid)
+                                .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnenter)
-                .addGap(261, 261, 261))
+                .addGap(267, 267, 267))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,13 +214,14 @@ public class EnterJPanel extends javax.swing.JPanel {
                     .addComponent(lbemail)
                     .addComponent(txtemailid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(lbphoto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbphoto)
+                    .addComponent(photo)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
                 .addComponent(btnenter)
-                .addGap(23, 23, 23))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
-
-        lbname.getAccessibleContext().setAccessibleName("Name");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -241,6 +253,7 @@ public class EnterJPanel extends javax.swing.JPanel {
         emp.setposition(txtposition.getText());
         emp.setemail(txtemailid.getText());
         emp.setcontactno(txtphone.getText());
+        emp.setphoto(jTextField1.getText());
         JOptionPane.showMessageDialog(this, "New Employee Profile Created");
         
         txtage.setText("");
@@ -267,6 +280,7 @@ public class EnterJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lbage;
     private javax.swing.JLabel lbdepartment;
     private javax.swing.JLabel lbemail;
@@ -278,6 +292,7 @@ public class EnterJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lbphoto;
     private javax.swing.JLabel lbposition;
     private javax.swing.JLabel lbstartdate;
+    private javax.swing.JLabel photo;
     private javax.swing.JTextField txtage;
     private javax.swing.JTextField txtdepartment;
     private javax.swing.JTextField txtemailid;

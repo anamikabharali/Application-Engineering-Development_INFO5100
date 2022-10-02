@@ -3,6 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.EmpProfile;
@@ -11,13 +16,14 @@ import model.EmpList;
  *
  * @author anamikabharali
  */
-EmpList history;
+
 public class SearchJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form SearchJPanel
      */
-    public SearchJPanel() {
+    EmpList history;
+    public SearchJPanel(EmpList history) {
         initComponents();
         this.history = history;
         populateTable();
@@ -62,6 +68,8 @@ public class SearchJPanel extends javax.swing.JPanel {
         txtposition = new javax.swing.JTextField();
         lbposition = new javax.swing.JLabel();
         txtphone = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        pp = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,6 +123,11 @@ public class SearchJPanel extends javax.swing.JPanel {
         });
 
         jButton1.setText("Search");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         lbphone.setText("Phone no");
 
@@ -156,6 +169,8 @@ public class SearchJPanel extends javax.swing.JPanel {
 
         lbposition.setText("Position");
 
+        pp.setText("jLabel3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -170,14 +185,6 @@ public class SearchJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtselectedvalue)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -199,6 +206,9 @@ public class SearchJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtempid)
@@ -209,12 +219,22 @@ public class SearchJPanel extends javax.swing.JPanel {
                             .addComponent(txtemailid, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                             .addComponent(txtname)
                             .addComponent(txtposition))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                        .addComponent(lbphoto)
-                        .addGap(82, 82, 82))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lbphoto)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(82, 82, 82))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtselectedvalue)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,7 +248,7 @@ public class SearchJPanel extends javax.swing.JPanel {
                     .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtselectedvalue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbname)
                     .addGroup(layout.createSequentialGroup()
@@ -248,7 +268,9 @@ public class SearchJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtstartdate, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbstartdate))
+                            .addComponent(lbstartdate)
+                            .addComponent(jLabel2)
+                            .addComponent(pp, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtlevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,7 +280,7 @@ public class SearchJPanel extends javax.swing.JPanel {
                             .addComponent(txtdepartment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbphoto)
                             .addComponent(lbdepartment))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtposition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbposition))
@@ -293,6 +315,11 @@ public class SearchJPanel extends javax.swing.JPanel {
 
     private void comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboActionPerformed
         // TODO add your handling code here:
+
+    }//GEN-LAST:event_comboActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
         String selectedvalue = combo.getSelectedItem().toString();
         if (selectedvalue=="EmpID") {
             boolean found = false;
@@ -315,7 +342,7 @@ public class SearchJPanel extends javax.swing.JPanel {
         if (selectedvalue=="Contactno") {
             boolean found = false;
             for(EmpProfile emp : history.getList()){
-                if (emp.getcontactno()==txtselectedvalue.getText()){
+                if (emp.getcontactno().equals(txtselectedvalue.getText())){
                     txtage.setText(String.valueOf(emp.getage()));
                     txtdepartment.setText(emp.getdepartment());
                     txtemailid.setText(emp.getemail());
@@ -326,6 +353,7 @@ public class SearchJPanel extends javax.swing.JPanel {
                     txtphone.setText(emp.getcontactno());
                     txtposition.setText(emp.getposition());
                     txtstartdate.setText(emp.getstartdate());
+                    
                     found=true;
                 }
             }
@@ -333,7 +361,7 @@ public class SearchJPanel extends javax.swing.JPanel {
         if (selectedvalue=="Name") {
             boolean found = false;
             for(EmpProfile emp : history.getList()){
-                if (emp.getname()==txtselectedvalue.getText()){
+                if (emp.getname().equals(txtselectedvalue.getText())){
                     txtage.setText(String.valueOf(emp.getage()));
                     txtdepartment.setText(emp.getdepartment());
                     txtemailid.setText(emp.getemail());
@@ -344,14 +372,27 @@ public class SearchJPanel extends javax.swing.JPanel {
                     txtphone.setText(emp.getcontactno());
                     txtposition.setText(emp.getposition());
                     txtstartdate.setText(emp.getstartdate());
-                    found=true;
-    }//GEN-LAST:event_comboActionPerformed
+                    System.out.print("Photo:" + emp.getphoto());
+                     BufferedImage photo = null;
+                     try {
+                       photo = ImageIO.read(new File(emp.getphoto()));
+            } catch (Exception e) {
+                 e.printStackTrace();
+            }
+
+                   Image image = photo.getScaledInstance(pp.getWidth(), pp.getHeight(),
+              Image.SCALE_SMOOTH);
+            
+            pp.setIcon(new ImageIcon(image));
+                    found=true;}}}
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> combo;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
@@ -367,6 +408,7 @@ public class SearchJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lbphoto;
     private javax.swing.JLabel lbposition;
     private javax.swing.JLabel lbstartdate;
+    private javax.swing.JLabel pp;
     private javax.swing.JTextField txtage;
     private javax.swing.JTextField txtdepartment;
     private javax.swing.JTextField txtemailid;
@@ -381,21 +423,11 @@ public class SearchJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
-        DefaultTableModel model=(DefaultTableModel) tblprofile.getModel();
+        DefaultTableModel model=(DefaultTableModel) jTable2.getModel();
         model.setRowCount(0);
-        for (EmpList emp: history.getList()){
-            Object[] row=new Object[3];
-            row[0]=emp.getname();
-            row[1]=emp.getempid();
-            row[2]=emp.getage();
-            row[3]=emp.getgender();
-            row[4]=emp.getstartdate();
-            row[5]=emp.getlevel();
-            row[6]=emp.getdepartment();
-            row[7]=emp.getposition();
-            row[8]=emp.getemail();
-            row[9]=emp.getcontactno();
-            
+        
+        for(EmpProfile emp: history.getList()){
+            Object[] row = {emp.getname(), emp.getempid(), emp.getage(), emp.getgender(), emp.getstartdate(),emp.getlevel(), emp.getdepartment(), emp.getposition(), emp.getemail(), emp.getcontactno()};
             model.addRow(row);
         }
     }

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui;
+import java.util.Optional;
 import javax.swing.JOptionPane;
 import model.EmpProfile;
 import model.EmpList;
@@ -10,7 +11,7 @@ import model.EmpList;
  *
  * @author anamikabharali
  */
-EmpProfile empremove=;
+
 public class UpdateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form UpdateJPanel
@@ -19,6 +20,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
     EmpList history;
     public UpdateJPanel(EmpList history, String updateid) {
         initComponents();
+        this.updateid=updateid;
         this.history = history;
         boolean found = false;
         for(EmpProfile emp : history.getList()){
@@ -157,7 +159,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnupdate)
-                .addGap(261, 261, 261))
+                .addGap(252, 252, 252))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,17 +209,19 @@ public class UpdateJPanel extends javax.swing.JPanel {
                     .addComponent(txtemailid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lbphoto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnupdate)
-                .addGap(23, 23, 23))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
         // TODO add your handling code here:
-        history.getList().remove(emp);
-        EmpProfile emp = history.addnew();
         
+        
+        Optional<EmpProfile> empp=history.getList().stream().filter(A->A.getempid()==Integer.parseInt(updateid)).findFirst();
+        if (empp.isPresent()){
+            EmpProfile emp=empp.get();
         emp.setname(txtname.getText());
         emp.setempid(Integer.parseInt(txtempid.getText()));
         emp.setage(Integer.parseInt(txtage.getText()));
@@ -228,7 +232,10 @@ public class UpdateJPanel extends javax.swing.JPanel {
         emp.setposition(txtposition.getText());
         emp.setemail(txtemailid.getText());
         emp.setcontactno(txtphone.getText());
-        JOptionPane.showMessageDialog(this, "Employee Profile updated");
+        JOptionPane.showMessageDialog(this, "Employee Profile updated");}
+        else
+            JOptionPane.showMessageDialog(this, "Employee Profile not found");
+            
 
         txtage.setText("");
         txtdepartment.setText("");
@@ -282,4 +289,5 @@ public class UpdateJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtposition;
     private javax.swing.JTextField txtstartdate;
     // End of variables declaration//GEN-END:variables
+    private String updateid;
 }

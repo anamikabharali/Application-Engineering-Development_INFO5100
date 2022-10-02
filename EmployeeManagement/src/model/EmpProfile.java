@@ -20,6 +20,8 @@ public class EmpProfile {
 	private String position;
 	private String email;
 	private String contactno;
+        private String photo;
+        
 	
 	public String getname() {
 		return name;
@@ -35,6 +37,7 @@ public class EmpProfile {
 	
 	public void setempid(int empid) {
 		this.empid=empid;
+                
 	}
 	
 	public int getage() {
@@ -100,5 +103,10 @@ public class EmpProfile {
 	public void setcontactno(String contactno) {
 		this.contactno=contactno;
 	}
-
+        public String getphoto() {
+		return photo;
+	}
+	
+	public void setphoto(String photo) {
+		this.photo=photo;}
 }
