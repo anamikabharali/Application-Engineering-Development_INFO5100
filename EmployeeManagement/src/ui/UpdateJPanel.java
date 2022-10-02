@@ -10,6 +10,7 @@ import model.EmpList;
  *
  * @author anamikabharali
  */
+EmpProfile empremove=;
 public class UpdateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form UpdateJPanel
@@ -214,7 +215,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
 
     private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
         // TODO add your handling code here:
-            
+        history.getList().remove(emp);
         EmpProfile emp = history.addnew();
         
         emp.setname(txtname.getText());
