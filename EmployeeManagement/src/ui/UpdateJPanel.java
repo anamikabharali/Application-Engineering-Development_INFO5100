@@ -75,7 +75,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
         lbemail.setText("Email ID");
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel1.setText("Create New Employee Record");
+        jLabel1.setText("Update Employee Record");
 
         lbphoto.setText("Profile Photo");
 
