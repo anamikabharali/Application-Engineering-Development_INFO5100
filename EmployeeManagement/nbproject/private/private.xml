@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/anamikabharali/NetBeansProjects/EmployeeManagement/src/ui/EnterJPanel.java</file>
             <file>file:/Users/anamikabharali/NetBeansProjects/EmployeeManagement/src/ui/MainJFrame.java</file>
+            <file>file:/Users/anamikabharali/NetBeansProjects/EmployeeManagement/src/ui/SearchJPanel.java</file>
             <file>file:/Users/anamikabharali/NetBeansProjects/EmployeeManagement/src/ui/UpdateJPanel.java</file>
-            <file>file:/Users/anamikabharali/NetBeansProjects/EmployeeManagement/src/ui/DeleteJPanel.java</file>
+            <file>file:/Users/anamikabharali/NetBeansProjects/EmployeeManagement/src/model/EmpProfile.java</file>
         </group>
     </open-files>
 </project-private>
