@@ -38,8 +38,8 @@ public class SearchJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        combo = new javax.swing.JComboBox<>();
+        txtselectedvalue = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         lbphone = new javax.swing.JLabel();
         txtemailid = new javax.swing.JTextField();
@@ -100,11 +100,17 @@ public class SearchJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel1.setText("All Records");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "EmpID", "Contact no" }));
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "EmpID", "Contactno" }));
+        combo.setAutoscrolls(true);
+        combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                comboActionPerformed(evt);
+            }
+        });
+
+        txtselectedvalue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtselectedvalueActionPerformed(evt);
             }
         });
 
@@ -166,9 +172,9 @@ public class SearchJPanel extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1)
+                .addComponent(txtselectedvalue)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
@@ -219,8 +225,8 @@ public class SearchJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtselectedvalue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,9 +274,9 @@ public class SearchJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtselectedvalueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtselectedvalueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtselectedvalueActionPerformed
 
     private void txtgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtgenderActionPerformed
         // TODO add your handling code here:
@@ -285,16 +291,71 @@ public class SearchJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_txtlevelActionPerformed
 
+    private void comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboActionPerformed
+        // TODO add your handling code here:
+        String selectedvalue = combo.getSelectedItem().toString();
+        if (selectedvalue=="EmpID") {
+            boolean found = false;
+            for(EmpProfile emp : history.getList()){
+                if (emp.getempid()==Integer.parseInt(txtselectedvalue.getText())){
+                    txtage.setText(String.valueOf(emp.getage()));
+                    txtdepartment.setText(emp.getdepartment());
+                    txtemailid.setText(emp.getemail());
+                    txtempid.setText(String.valueOf(emp.getempid()));
+                    txtgender.setText(emp.getgender());
+                    txtlevel.setText(String.valueOf(emp.getlevel()));
+                    txtname.setText(emp.getname());
+                    txtphone.setText(emp.getcontactno());
+                    txtposition.setText(emp.getposition());
+                    txtstartdate.setText(emp.getstartdate());
+                    found=true;
+                }
+            }
+        }
+        if (selectedvalue=="Contactno") {
+            boolean found = false;
+            for(EmpProfile emp : history.getList()){
+                if (emp.getcontactno()==txtselectedvalue.getText()){
+                    txtage.setText(String.valueOf(emp.getage()));
+                    txtdepartment.setText(emp.getdepartment());
+                    txtemailid.setText(emp.getemail());
+                    txtempid.setText(String.valueOf(emp.getempid()));
+                    txtgender.setText(emp.getgender());
+                    txtlevel.setText(String.valueOf(emp.getlevel()));
+                    txtname.setText(emp.getname());
+                    txtphone.setText(emp.getcontactno());
+                    txtposition.setText(emp.getposition());
+                    txtstartdate.setText(emp.getstartdate());
+                    found=true;
+                }
+            }
+        }
+        if (selectedvalue=="Name") {
+            boolean found = false;
+            for(EmpProfile emp : history.getList()){
+                if (emp.getname()==txtselectedvalue.getText()){
+                    txtage.setText(String.valueOf(emp.getage()));
+                    txtdepartment.setText(emp.getdepartment());
+                    txtemailid.setText(emp.getemail());
+                    txtempid.setText(String.valueOf(emp.getempid()));
+                    txtgender.setText(emp.getgender());
+                    txtlevel.setText(String.valueOf(emp.getlevel()));
+                    txtname.setText(emp.getname());
+                    txtphone.setText(emp.getcontactno());
+                    txtposition.setText(emp.getposition());
+                    txtstartdate.setText(emp.getstartdate());
+                    found=true;
+    }//GEN-LAST:event_comboActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> combo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lbage;
     private javax.swing.JLabel lbdepartment;
     private javax.swing.JLabel lbemail;
@@ -315,6 +376,7 @@ public class SearchJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtphone;
     private javax.swing.JTextField txtposition;
+    private javax.swing.JTextField txtselectedvalue;
     private javax.swing.JTextField txtstartdate;
     // End of variables declaration//GEN-END:variables
 
