@@ -21,7 +21,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form UpdateJPanel
      */
-    EmpProfile emp;
+    //EmpProfile emp;
     EmpList history;
     public UpdateJPanel(EmpList history, String updateid) {
         initComponents();
@@ -77,7 +77,6 @@ public class UpdateJPanel extends javax.swing.JPanel {
         btnupdate = new javax.swing.JButton();
         lbage = new javax.swing.JLabel();
         txtage = new javax.swing.JTextField();
-        txtgender = new javax.swing.JTextField();
         lbgender = new javax.swing.JLabel();
         txtstartdate = new javax.swing.JTextField();
         lbstartdate = new javax.swing.JLabel();
@@ -89,6 +88,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
         lbposition = new javax.swing.JLabel();
         txtphone = new javax.swing.JTextField();
         propic = new javax.swing.JLabel();
+        txtgender = new javax.swing.JTextField();
 
         lbphone.setText("Phone no");
 
@@ -111,12 +111,6 @@ public class UpdateJPanel extends javax.swing.JPanel {
         });
 
         lbage.setText("Age");
-
-        txtgender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtgenderActionPerformed(evt);
-            }
-        });
 
         lbgender.setText("Gender");
 
@@ -160,22 +154,26 @@ public class UpdateJPanel extends javax.swing.JPanel {
                     .addComponent(lbgender))
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel1)
-                        .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtname)
-                        .addComponent(txtempid)
-                        .addComponent(txtstartdate)
-                        .addComponent(txtlevel)
-                        .addComponent(txtdepartment)
-                        .addComponent(txtposition)
-                        .addComponent(txtphone, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                        .addComponent(txtemailid))
-                    .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(propic, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 142, Short.MAX_VALUE)))
-                .addGap(273, 273, 273))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel1)
+                                .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtname)
+                                .addComponent(txtempid)
+                                .addComponent(txtstartdate)
+                                .addComponent(txtlevel)
+                                .addComponent(txtdepartment)
+                                .addComponent(txtposition)
+                                .addComponent(txtphone, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                                .addComponent(txtemailid))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(propic, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 142, Short.MAX_VALUE)))
+                        .addGap(339, 339, 339))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(308, 308, 308)
                 .addComponent(btnupdate)
@@ -246,19 +244,64 @@ public class UpdateJPanel extends javax.swing.JPanel {
         Optional<EmpProfile> empp=history.getList().stream().filter(A->A.getempid()==Integer.parseInt(updateid)).findFirst();
         if (empp.isPresent()){
             EmpProfile emp=empp.get();
-        emp.setname(txtname.getText());
-        emp.setempid(Integer.parseInt(txtempid.getText()));
-        emp.setage(Integer.parseInt(txtage.getText()));
-        emp.setgender(txtgender.getText());
-        emp.setstartdate(txtstartdate.getText());
-        emp.setlevel(Integer.parseInt(txtlevel.getText()));
-        emp.setdepartment(txtdepartment.getText());
-        emp.setposition(txtposition.getText());
-        emp.setemail(txtemailid.getText());
-        emp.setcontactno(txtphone.getText());
-        JOptionPane.showMessageDialog(this, "Employee Profile updated");}
-        else
-            JOptionPane.showMessageDialog(this, "Employee Profile not found");
+            /*String Name=txtname.getText();
+            int ID=Integer.parseInt(txtempid.getText());
+            int age=Integer.parseInt(txtage.getText());
+            String gender=txtgender.getText();
+            String startdate=txtstartdate.getText();
+            int level=Integer.parseInt(txtlevel.getText());
+            String department=txtdepartment.getText();
+            String position=txtposition.getText();
+            String email=txtemailid.getText();
+            String contactno=txtphone.getText();
+            boolean isValid=true;
+            String regex_contactno = "^\\d{10}$";
+            String regex_email = "^(.+)@(\\S+)$";
+            String regex_date="^\\d{2}-\\d{2}-\\d{4}$";
+            if(!(contactno.matches(regex_contactno))){
+                isValid=false;
+                JOptionPane.showMessageDialog(this, "Contact number should be 10 digits long!");
+            }
+            if(!(email.matches(regex_email))){
+                isValid=false;
+                JOptionPane.showMessageDialog(this, "Please put in valid email id!");
+            }
+            if(!(startdate.matches(regex_date))){
+                isValid=false;
+                JOptionPane.showMessageDialog(this, "Date should be in MM-DD-YYYY format!");
+            }
+        
+            if(isValid==true){
+           
+            emp1.setname(Name);
+            emp1.setempid(ID);
+            emp1.setage(age);
+            emp1.setgender(gender);
+            emp1.setstartdate(startdate);
+            emp1.setlevel(level);
+            emp1.setdepartment(department);
+            emp1.setposition(position);
+            emp1.setemail(email);
+            emp1.setcontactno(contactno);
+            emp1.setphoto(propic.getText());
+            JOptionPane.showMessageDialog(this, "Employee Profile Updated");
+            }
+            else{
+            JOptionPane.showMessageDialog(this, "InValid Input");
+            }*/
+            emp.setname(txtname.getText());
+            emp.setempid(Integer.parseInt(txtempid.getText()));
+            emp.setage(Integer.parseInt(txtage.getText()));
+            emp.setgender(txtgender.getText());
+            emp.setstartdate(txtstartdate.getText());
+            emp.setlevel(Integer.parseInt(txtlevel.getText()));
+            emp.setdepartment(txtdepartment.getText());
+            emp.setposition(txtposition.getText());
+            emp.setemail(txtemailid.getText());
+            emp.setcontactno(txtphone.getText());
+            JOptionPane.showMessageDialog(this, "Employee Profile updated");}
+        else{
+            JOptionPane.showMessageDialog(this, "Employee Profile not found");}
             
 
         txtage.setText("");
@@ -273,10 +316,6 @@ public class UpdateJPanel extends javax.swing.JPanel {
         txtstartdate.setText("");
 
     }//GEN-LAST:event_btnupdateActionPerformed
-
-    private void txtgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtgenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtgenderActionPerformed
 
     private void txtstartdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtstartdateActionPerformed
         // TODO add your handling code here:
