@@ -43,7 +43,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
                 found=true;
             }
         }
-        BufferedImage photo = null;
+        /*BufferedImage photo = null;
                      try {
                        photo = ImageIO.read(new File(emp.getphoto()));
             } catch (Exception e) {
@@ -53,7 +53,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
                    Image image = photo.getScaledInstance(propic.getWidth(), propic.getHeight(),
               Image.SCALE_SMOOTH);
             
-            propic.setIcon(new ImageIcon(image));
+            propic.setIcon(new ImageIcon(image));*/
     }
 
     /**
@@ -69,7 +69,6 @@ public class UpdateJPanel extends javax.swing.JPanel {
         txtemailid = new javax.swing.JTextField();
         lbemail = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        lbphoto = new javax.swing.JLabel();
         lbname = new javax.swing.JLabel();
         txtname = new javax.swing.JTextField();
         lbempid = new javax.swing.JLabel();
@@ -96,8 +95,6 @@ public class UpdateJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel1.setText("Update Employee Record");
-
-        lbphoto.setText("Profile Photo");
 
         lbname.setText("Name");
 
@@ -138,23 +135,22 @@ public class UpdateJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbphoto)
-                    .addComponent(lbemail)
-                    .addComponent(lbphone)
-                    .addComponent(lbdepartment)
-                    .addComponent(lbposition)
-                    .addComponent(lbempid)
-                    .addComponent(lbname)
-                    .addComponent(lbstartdate)
-                    .addComponent(lblevel)
-                    .addComponent(lbage)
-                    .addComponent(lbgender))
-                .addGap(87, 87, 87)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lbemail)
+                            .addComponent(lbphone)
+                            .addComponent(lbdepartment)
+                            .addComponent(lbposition)
+                            .addComponent(lbempid)
+                            .addComponent(lbname)
+                            .addComponent(lbstartdate)
+                            .addComponent(lblevel)
+                            .addComponent(lbage)
+                            .addComponent(lbgender))
+                        .addGap(87, 87, 87)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel1)
@@ -167,16 +163,11 @@ public class UpdateJPanel extends javax.swing.JPanel {
                                 .addComponent(txtposition)
                                 .addComponent(txtphone, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                                 .addComponent(txtemailid))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(propic, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 142, Short.MAX_VALUE)))
-                        .addGap(339, 339, 339))
+                            .addComponent(propic, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(308, 308, 308)
-                .addComponent(btnupdate)
+                        .addGap(308, 308, 308)
+                        .addComponent(btnupdate)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -226,11 +217,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
                     .addComponent(lbemail)
                     .addComponent(txtemailid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbphoto)
-                        .addGap(0, 72, Short.MAX_VALUE))
-                    .addComponent(propic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(propic, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnupdate)
                 .addGap(26, 26, 26))
@@ -338,7 +325,6 @@ public class UpdateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblevel;
     private javax.swing.JLabel lbname;
     private javax.swing.JLabel lbphone;
-    private javax.swing.JLabel lbphoto;
     private javax.swing.JLabel lbposition;
     private javax.swing.JLabel lbstartdate;
     private javax.swing.JLabel propic;
