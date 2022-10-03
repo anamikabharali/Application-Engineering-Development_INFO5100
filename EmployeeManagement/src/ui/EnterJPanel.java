@@ -254,6 +254,8 @@ public class EnterJPanel extends javax.swing.JPanel {
         emp.setemail(txtemailid.getText());
         emp.setcontactno(txtphone.getText());
         emp.setphoto(jTextField1.getText());
+        /*boolean pass=false;
+        if ()*/
         JOptionPane.showMessageDialog(this, "New Employee Profile Created");
         
         txtage.setText("");

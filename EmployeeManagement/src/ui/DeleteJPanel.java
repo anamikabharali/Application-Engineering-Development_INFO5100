@@ -18,14 +18,16 @@ public class DeleteJPanel extends javax.swing.JPanel {
     public DeleteJPanel(EmpList history) {
         initComponents();
         this.history = history;
-        boolean found = false;
+        /*boolean found = false;
         for(EmpProfile emp : history.getList()){
             if (emp.getempid()==Integer.parseInt(txtempid.getText())){
                 history.getList().remove(emp);
                 found=true;
+                JOptionPane.showMessageDialog(this, "Employee Profile/Record deleted");
             }
-        }
-        JOptionPane.showMessageDialog(this, "Employee Profile/Record deleted");
+            else{JOptionPane.showMessageDialog(this, "Employee Profile/Record Not Found");}
+        }*/
+        
     }
 
     /**
@@ -94,6 +96,15 @@ public class DeleteJPanel extends javax.swing.JPanel {
 
     private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
         // TODO add your handling code here:
+        boolean found = false;
+        for(EmpProfile emp : history.getList()){
+            if (emp.getempid()==Integer.parseInt(txtempid.getText())){
+                history.getList().remove(emp);
+                JOptionPane.showMessageDialog(this, "Employee Profile/Record deleted");
+                found=true;
+            }
+            else{JOptionPane.showMessageDialog(this, "Employee Profile/Record Not Found");found=true;}
+        }
     }//GEN-LAST:event_btndeleteActionPerformed
 
 
