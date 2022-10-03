@@ -95,6 +95,7 @@ public class EnterJPanel extends javax.swing.JPanel {
 
         lbphoto.setText("Profile Photo");
 
+        txtstartdate.setText("MM-DD-YYYY");
         txtstartdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtstartdateActionPerformed(evt);
@@ -120,7 +121,7 @@ public class EnterJPanel extends javax.swing.JPanel {
             }
         });
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("Picture File Name");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -241,7 +242,52 @@ public class EnterJPanel extends javax.swing.JPanel {
 
     private void btnenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenterActionPerformed
         // TODO add your handling code here:
-	
+        String Name=txtname.getText();
+        int ID=Integer.parseInt(txtempid.getText());
+        int age=Integer.parseInt(txtage.getText());
+        String gender=txtgender.getText();
+        String startdate=txtstartdate.getText();
+        int level=Integer.parseInt(txtlevel.getText());
+        String department=txtdepartment.getText();
+        String position=txtposition.getText();
+        String email=txtemailid.getText();
+        String contactno=txtphone.getText();
+        boolean isValid=true;
+        String regex_contactno = "^\\d{10}$";
+        String regex_email = "^(.+)@(\\S+)$";
+        String regex_date="^\\d{2}-\\d{2}-\\d{4}$";
+        if(!(contactno.matches(regex_contactno))){
+            isValid=false;
+            JOptionPane.showMessageDialog(this, "Contact number should be 10 digits long!");
+        }
+        if(!(email.matches(regex_email))){
+            isValid=false;
+            JOptionPane.showMessageDialog(this, "Please put in valid email id!");
+        }
+        if(!(startdate.matches(regex_date))){
+            isValid=false;
+            JOptionPane.showMessageDialog(this, "Date should be in MM-DD-YYYY format!");
+        }
+        
+        if(isValid==true){
+        EmpProfile emp = history.addnew();
+        emp.setname(Name);
+        emp.setempid(ID);
+        emp.setage(age);
+        emp.setgender(gender);
+        emp.setstartdate(startdate);
+        emp.setlevel(level);
+        emp.setdepartment(department);
+        emp.setposition(position);
+        emp.setemail(email);
+        emp.setcontactno(contactno);
+        emp.setphoto(jTextField1.getText());
+        JOptionPane.showMessageDialog(this, "New Employee Profile Created");
+        }
+        else{
+        JOptionPane.showMessageDialog(this, "InValid Input");
+        }
+        /*
         EmpProfile emp = history.addnew();
         emp.setname(txtname.getText());
         emp.setempid(Integer.parseInt(txtempid.getText()));
@@ -253,10 +299,10 @@ public class EnterJPanel extends javax.swing.JPanel {
         emp.setposition(txtposition.getText());
         emp.setemail(txtemailid.getText());
         emp.setcontactno(txtphone.getText());
+        
+        
         emp.setphoto(jTextField1.getText());
-        /*boolean pass=false;
-        if ()*/
-        JOptionPane.showMessageDialog(this, "New Employee Profile Created");
+        JOptionPane.showMessageDialog(this, "New Employee Profile Created");*/
         
         txtage.setText("");
         txtdepartment.setText("");

@@ -3,7 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.Optional;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import model.EmpProfile;
 import model.EmpList;
@@ -16,7 +21,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form UpdateJPanel
      */
-
+    EmpProfile emp;
     EmpList history;
     public UpdateJPanel(EmpList history, String updateid) {
         initComponents();
@@ -38,6 +43,17 @@ public class UpdateJPanel extends javax.swing.JPanel {
                 found=true;
             }
         }
+        BufferedImage photo = null;
+                     try {
+                       photo = ImageIO.read(new File(emp.getphoto()));
+            } catch (Exception e) {
+                 e.printStackTrace();
+            }
+
+                   Image image = photo.getScaledInstance(propic.getWidth(), propic.getHeight(),
+              Image.SCALE_SMOOTH);
+            
+            propic.setIcon(new ImageIcon(image));
     }
 
     /**
@@ -72,6 +88,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
         txtposition = new javax.swing.JTextField();
         lbposition = new javax.swing.JLabel();
         txtphone = new javax.swing.JTextField();
+        propic = new javax.swing.JLabel();
 
         lbphone.setText("Phone no");
 
@@ -127,7 +144,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(85, 85, 85)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbphoto)
@@ -154,12 +171,15 @@ public class UpdateJPanel extends javax.swing.JPanel {
                         .addComponent(txtposition)
                         .addComponent(txtphone, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                         .addComponent(txtemailid))
-                    .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 127, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(propic, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 142, Short.MAX_VALUE)))
+                .addGap(273, 273, 273))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(308, 308, 308)
                 .addComponent(btnupdate)
-                .addGap(252, 252, 252))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,10 +228,14 @@ public class UpdateJPanel extends javax.swing.JPanel {
                     .addComponent(lbemail)
                     .addComponent(txtemailid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(lbphoto)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbphoto)
+                        .addGap(0, 72, Short.MAX_VALUE))
+                    .addComponent(propic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnupdate)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -278,6 +302,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lbphoto;
     private javax.swing.JLabel lbposition;
     private javax.swing.JLabel lbstartdate;
+    private javax.swing.JLabel propic;
     private javax.swing.JTextField txtage;
     private javax.swing.JTextField txtdepartment;
     private javax.swing.JTextField txtemailid;
