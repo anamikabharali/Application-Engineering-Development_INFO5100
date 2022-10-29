@@ -10,23 +10,14 @@ package Model;
  */
 public class Community {
     
-    private int phno;
-    private String password;
+    private int pincode;
 
-    public int getPhno() {
-        return phno;
+    public int getPincode() {
+        return pincode;
     }
 
-    public void setPhno(int phno) {
-        this.phno = phno;
+    public void setPincode(int pincode) {
+        this.pincode = pincode;
     }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    
+   
 }

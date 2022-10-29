@@ -12,7 +12,34 @@ public class House {
     
     private int residentphno;
     private String residentname;
+    private String houseaddress;
+    private String housecity;
+    private int housepincodecode;
 
+    public String getHouseaddress() {
+        return houseaddress;
+    }
+
+    public void setHouseaddress(String houseaddress) {
+        this.houseaddress = houseaddress;
+    }
+
+    public String getHousecity() {
+        return housecity;
+    }
+
+    public void setHousecity(String housecity) {
+        this.housecity = housecity;
+    }
+
+    public int getHousepincodecode() {
+        return housepincodecode;
+    }
+
+    public void setHousepincodecode(int housepincodecode) {
+        this.housepincodecode = housepincodecode;
+    }
+    
     public int getResidentphno() {
         return residentphno;
     }

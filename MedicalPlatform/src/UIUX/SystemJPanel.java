@@ -26,21 +26,144 @@ public class SystemJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSplitPane1 = new javax.swing.JSplitPane();
+        jPanel1 = new javax.swing.JPanel();
+        systempersonbtn = new javax.swing.JButton();
+        systempatientbtn = new javax.swing.JButton();
+        systemdoctorbtn = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        systemhospitalbtn = new javax.swing.JButton();
+        systemcitybtn = new javax.swing.JButton();
+        systemcommbtn = new javax.swing.JButton();
+        systemhousebtn = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+
         setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
+
+        systempersonbtn.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        systempersonbtn.setForeground(new java.awt.Color(0, 153, 255));
+        systempersonbtn.setText("Person");
+
+        systempatientbtn.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        systempatientbtn.setForeground(new java.awt.Color(0, 153, 255));
+        systempatientbtn.setText("Patient");
+
+        systemdoctorbtn.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        systemdoctorbtn.setForeground(new java.awt.Color(0, 153, 255));
+        systemdoctorbtn.setText("Doctor");
+
+        jButton4.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(0, 153, 255));
+        jButton4.setText("Encounter");
+
+        systemhospitalbtn.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        systemhospitalbtn.setForeground(new java.awt.Color(0, 153, 255));
+        systemhospitalbtn.setText("Hospital");
+
+        systemcitybtn.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        systemcitybtn.setForeground(new java.awt.Color(0, 153, 255));
+        systemcitybtn.setText("City");
+
+        systemcommbtn.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        systemcommbtn.setForeground(new java.awt.Color(0, 153, 255));
+        systemcommbtn.setText("Community");
+
+        systemhousebtn.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        systemhousebtn.setForeground(new java.awt.Color(0, 153, 255));
+        systemhousebtn.setText("House");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(systempatientbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(systemdoctorbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(systemcommbtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(systemcitybtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(systemhospitalbtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(systemhousebtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(systempersonbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(systempersonbtn)
+                .addGap(38, 38, 38)
+                .addComponent(systempatientbtn)
+                .addGap(38, 38, 38)
+                .addComponent(systemdoctorbtn)
+                .addGap(38, 38, 38)
+                .addComponent(jButton4)
+                .addGap(38, 38, 38)
+                .addComponent(systemhospitalbtn)
+                .addGap(38, 38, 38)
+                .addComponent(systemcitybtn)
+                .addGap(38, 38, 38)
+                .addComponent(systemcommbtn)
+                .addGap(38, 38, 38)
+                .addComponent(systemhousebtn)
+                .addContainerGap(86, Short.MAX_VALUE))
+        );
+
+        jSplitPane1.setLeftComponent(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/anamikabharali/Desktop/Screen Shot 2022-10-28 at 1.57.59 PM.png")); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jSplitPane1.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1100, Short.MAX_VALUE)
+            .addComponent(jSplitPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jSplitPane1)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JButton systemcitybtn;
+    private javax.swing.JButton systemcommbtn;
+    private javax.swing.JButton systemdoctorbtn;
+    private javax.swing.JButton systemhospitalbtn;
+    private javax.swing.JButton systemhousebtn;
+    private javax.swing.JButton systempatientbtn;
+    private javax.swing.JButton systempersonbtn;
     // End of variables declaration//GEN-END:variables
 }

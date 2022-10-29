@@ -12,8 +12,6 @@ public class Vitalsigns extends Encounter{
     private double Temperature;  //Decimals
     private double BloodPressure;    //Decimals
     private int Pulse;
-    //private String Diagnosis;
-    //private String Date;
 
     public double getTemperature() {
         return Temperature;
@@ -38,21 +36,5 @@ public class Vitalsigns extends Encounter{
     public void setPulse(int Pulse) {
         this.Pulse = Pulse;
     }
-
-    //public String getDiagnosis() {
-     //   return Diagnosis;
-    //}
-
-    //public void setDiagnosis(String Diagnosis) {
-    //    this.Diagnosis = Diagnosis;
-    //}
-
-    //public String getDate() {
-    //    return Date;
-    //}
-
-    //public void setDate(String Date) {
-     //   this.Date = Date;
-    //}
     
 }

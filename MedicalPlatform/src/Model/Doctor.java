@@ -10,6 +10,15 @@ package Model;
  */
 public class Doctor extends Person{
     private String hospitalname;
+    private boolean isdoctor;
+
+    public boolean Isdoctor() {
+        return isdoctor;
+    }
+
+    public void setIsdoctor(boolean isdoctor) {
+        this.isdoctor = isdoctor;
+    }
 
     public String getHospitalname() {
         return hospitalname;

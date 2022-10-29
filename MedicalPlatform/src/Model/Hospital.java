@@ -9,14 +9,31 @@ package Model;
  * @author anamikabharali
  */
 public class Hospital {
+    
     private String hospitalname;
     private int hospitalph;
-    private String password;
     private String hospitaladdress;
-    private int communitycode;
+    private String hospitalcity;
+    private int hospitalpincode;
 
     public String getHospitalname() {
         return hospitalname;
+    }
+
+    public String getHospitalcity() {
+        return hospitalcity;
+    }
+
+    public void setHospitalcity(String hospitalcity) {
+        this.hospitalcity = hospitalcity;
+    }
+
+    public int getHospitalpincode() {
+        return hospitalpincode;
+    }
+
+    public void setHospitalpincode(int hospitalpincode) {
+        this.hospitalpincode = hospitalpincode;
     }
 
     public void setHospitalname(String hospitalname) {
@@ -31,14 +48,6 @@ public class Hospital {
         this.hospitalph = hospitalph;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getHospitaladdress() {
         return hospitaladdress;
     }
@@ -47,12 +56,4 @@ public class Hospital {
         this.hospitaladdress = hospitaladdress;
     }
 
-    public int getCommunitycode() {
-        return communitycode;
-    }
-
-    public void setCommunitycode(int communitycode) {
-        this.communitycode = communitycode;
-    }
-    
 }

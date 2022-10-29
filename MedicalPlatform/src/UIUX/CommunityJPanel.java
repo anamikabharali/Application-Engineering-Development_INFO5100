@@ -26,21 +26,130 @@ public class CommunityJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSplitPane1 = new javax.swing.JSplitPane();
+        jPanel1 = new javax.swing.JPanel();
+        comcreatehosbtn = new javax.swing.JButton();
+        comviewhosbtn = new javax.swing.JButton();
+        comcreatehousebtn = new javax.swing.JButton();
+        comviewhousebtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
         setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
+
+        comcreatehosbtn.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        comcreatehosbtn.setForeground(new java.awt.Color(0, 153, 255));
+        comcreatehosbtn.setText("Create Hospital");
+        comcreatehosbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comcreatehosbtnActionPerformed(evt);
+            }
+        });
+
+        comviewhosbtn.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        comviewhosbtn.setForeground(new java.awt.Color(0, 153, 255));
+        comviewhosbtn.setText("View/Delete Hospital");
+        comviewhosbtn.setToolTipText("");
+        comviewhosbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comviewhosbtnActionPerformed(evt);
+            }
+        });
+
+        comcreatehousebtn.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        comcreatehousebtn.setForeground(new java.awt.Color(0, 153, 255));
+        comcreatehousebtn.setText("Create House");
+        comcreatehousebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comcreatehousebtnActionPerformed(evt);
+            }
+        });
+
+        comviewhousebtn.setFont(new java.awt.Font("Tamil MN", 0, 12)); // NOI18N
+        comviewhousebtn.setForeground(new java.awt.Color(0, 153, 255));
+        comviewhousebtn.setText("View/Delete Houses");
+        comviewhousebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comviewhousebtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(comviewhosbtn))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(comviewhousebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(comcreatehousebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(comcreatehosbtn)))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(116, Short.MAX_VALUE)
+                .addComponent(comcreatehosbtn)
+                .addGap(99, 99, 99)
+                .addComponent(comviewhosbtn)
+                .addGap(94, 94, 94)
+                .addComponent(comcreatehousebtn)
+                .addGap(97, 97, 97)
+                .addComponent(comviewhousebtn)
+                .addGap(110, 110, 110))
+        );
+
+        jSplitPane1.setLeftComponent(jPanel1);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/anamikabharali/Desktop/Screen Shot 2022-10-28 at 11.43.57 AM.png")); // NOI18N
+        jSplitPane1.setRightComponent(jLabel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1100, Short.MAX_VALUE)
+            .addComponent(jSplitPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jSplitPane1)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void comcreatehosbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comcreatehosbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comcreatehosbtnActionPerformed
+
+    private void comviewhosbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comviewhosbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comviewhosbtnActionPerformed
+
+    private void comcreatehousebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comcreatehousebtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comcreatehousebtnActionPerformed
+
+    private void comviewhousebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comviewhousebtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comviewhousebtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton comcreatehosbtn;
+    private javax.swing.JButton comcreatehousebtn;
+    private javax.swing.JButton comviewhosbtn;
+    private javax.swing.JButton comviewhousebtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSplitPane jSplitPane1;
     // End of variables declaration//GEN-END:variables
 }

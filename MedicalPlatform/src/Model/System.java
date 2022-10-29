@@ -10,7 +10,6 @@ package Model;
  */
 public class System {
     private int phno;
-    private String password;
 
     public int getPhno() {
         return phno;
@@ -18,14 +17,6 @@ public class System {
 
     public void setPhno(int phno) {
         this.phno = phno;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
     
 }
